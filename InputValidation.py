@@ -10,4 +10,4 @@ def validasi_pilihan_utama(pilihan):
         else:
             raise ValueError
     except:
-        error("Pilihan hanya diperbolehkan menggunakan angka.")
+        error("Inputan tidak valid. Silahkan coba lagi")

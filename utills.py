@@ -16,9 +16,9 @@ def pembuka():
     center("-- Kalkulator Berguna Sedikit --")
     center("Dapat melakukan beberapa fungsi pilihan")
     line()
-    space()
 
 def menu():
+    space()
     line()
     print("Silahkan memilih menu berikut:")
     print("1. ➕ Operasi Sederhana")
