@@ -1,4 +1,6 @@
 from utills import pembuka, menu, error, space
+from features.statistik import fitur_statistik
+
 
 pembuka()
 while True:
@@ -9,7 +11,7 @@ while True:
             print("Fitur ini belum tersedia.")
         case 2:
             space()
-            print("Fitur ini belum tersedia.")
+            fitur_statistik()
         case 3:
             space()
             print("Fitur ini belum tersedia.")

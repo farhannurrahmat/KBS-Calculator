@@ -29,7 +29,7 @@ def menu():
         print("5. 📐 Bangun Ruang")
         print("6. 🔄 Konversi Satuan")
         print("7. 🚪 Keluar")
-        pilihan = input("Masukkan pilihan anda: ")
+        pilihan = input("\nMasukkan pilihan anda: ")
         if pilihan in ("1", "2", "3", "4", "5", "6", "7"):
             line()
             return int(pilihan)
