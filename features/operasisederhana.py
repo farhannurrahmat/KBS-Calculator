@@ -27,16 +27,22 @@ def operasi_bagi(angka_list):
 
 
 def tampilkan_tabel(judul, data_input, hasil):
+    angka_list = data_input.split()
     line()
     space()
     print("+-------------------------------------------+")
     print(f"| Operasi : {judul:<32}|")
     print("+-------------------------------------------+")
-    print(f"| Input   : {data_input:<32}|")
+
+    for i, angka in enumerate(angka_list, start=1):
+        print(f"| Angka {i:<2}: {angka:<32}|")
+
+    print("+-------------------------------------------+")
     print(f"| Hasil   : {hasil:<32.2f}|")
     print("+-------------------------------------------+")
     space()
     line()
+
 
 
 def eksekusi1():

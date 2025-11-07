@@ -1,53 +1,52 @@
 def line():
-    print ("=" * 64)
+    print("=" * 64)
 
 def space():
-    print ("")
+    print("")
 
 def center(text):
-    print (f"| {text:^60} |")
+    print(f" {text:^60} ")
 
 def pembuka():
+    space()
     line()
-    center("!!! WELCOME !!!")
+    center("✨ SELAMAT DATANG ✨")
     line()
-    center("KBS Calculator")
-    center("-- Kalkulator Berguna Sedikit --")
-    center("Dapat melakukan beberapa fungsi pilihan")
+    center("KBS CALCULATOR")
+    center("Kalkulator Berguna Sedikit")
+    center("Pilih fitur sesuai kebutuhanmu")
     line()
 
 def pembuka1():
     space()
     line()
-    center("~~ Operasi Sederhana ~~")
-    center("Fitur ini dapat melakukan pengoperasian sederhana")
-    center("dengan melakukan satu kali inputan")
-    center("tetapi belum dapat pengoperasian campuran.")
+    center("➕ OPERASI SEDERHANA ➕")
+    center("Hitung penjumlahan, pengurangan,")
+    center("perkalian, dan pembagian dengan mudah.")
     line()
 
 def pembuka2():
-    info("Anda Sekarang Masuk ke program")
     space()
     line()
-    center("~~ Statisik Sederhana ~~")
-    center("Fitur ini dapat menampilkan beberapa")
-    center("dari statistik sederhana dari inputan.")
+    center("📊 STATISTIK SEDERHANA 📊")
+    center("Tampilkan nilai mean, median, modus,")
+    center("serta data terkecil dan terbesar.")
     line()
 
 def pembuka4():
     space()
     line()
-    center("~~ FPB dan KPK ~~")
-    center("Fitur ini  dapat menampilkan FPB dan KPK")
-    center("dari beberapa bilangan yang diinput")
-    center("(FPB dan KPK hanya didefinisikan untuk bilangan positif)")
+    center("🔢 FPB & KPK 🔢")
+    center("Hitung FPB dan KPK dari bilangan positif.")
+    center("Gunakan untuk menyederhanakan pecahan.")
     line()
-    
+
 def menu():
     while True:
         space()
         line()
-        print("Silahkan memilih menu berikut:")
+        center("📋 MENU UTAMA 📋")
+        line()
         print("1. ➕ Operasi Sederhana")
         print("2. 📊 Statistik Sederhana")
         print("3. 🧮 Operasi Faktorial")
@@ -55,74 +54,73 @@ def menu():
         print("5. 📐 Bangun Ruang")
         print("6. 🔄 Konversi Satuan")
         print("7. 🚪 Keluar")
-        pilihan = input("Masukkan pilihan anda: ")
+        line()
+        pilihan = input("Masukkan pilihan Anda (1-7): ")
         if pilihan in ("1", "2", "3", "4", "5", "6", "7"):
             line()
             return int(pilihan)
-        line()
-        error("Inputan tidak valid. Silahkan coba lagi.")
+        error("Input tidak valid. Coba lagi.")
 
 def menu1():
     while True:
         space()
         line()
-        print("Silahkan memilih menu berikut:")
-        print("1. Penjumlahan")
-        print("2. Pengurangan")
-        print("3. Perkalian")
-        print("4. Pembagian")
-        print("5. Kembali")
-        pilihan1 = input("Masukkan pilihan anda: ")
+        center("⚙️   OPERASI SEDERHANA ⚙️")
+        line()
+        print("1. ➕ Penjumlahan")
+        print("2. ➖ Pengurangan")
+        print("3. ✖️  Perkalian")
+        print("4. ➗ Pembagian")
+        print("5. 🔙 Kembali")
+        line()
+        pilihan1 = input("Pilih operasi (1-5): ")
         if pilihan1 in ("1", "2", "3", "4", "5"):
             line()
             return int(pilihan1)
-        line()
-        error("Inputan tidak valid. Silahkan coba lagi.")
+        error("Input tidak valid. Coba lagi.")
 
 def menu2():
     while True:
         space()
         line()
-        print("Silahkan memilih menu berikut:")
-        print("1. Lanjut")
-        print("2. Kembali")
-        pilihan1 = input("Masukkan pilihan anda: ")
+        center("📊 MENU STATISTIK 📊")
+        line()
+        print("1. ▶️ Lanjut")
+        print("2. 🔙 Kembali")
+        line()
+        pilihan1 = input("Masukkan pilihan Anda (1-2): ")
         if pilihan1 in ("1", "2"):
             line()
             return int(pilihan1)
-        line()
-        error("Inputan tidak valid. Silahkan coba lagi.")
+        error("Input tidak valid. Coba lagi.")
 
 def menu4():
     while True:
         space()
         line()
-        print("Silahkan memilih menu berikut:")
-        print("1. Lanjut")
-        print("2. Kembali")
-        pilihan1 = input("Masukkan pilihan anda: ")
+        center("🔢 MENU FPB & KPK 🔢")
+        line()
+        print("1. ▶️  Lanjut")
+        print("2. 🔙 Kembali")
+        line()
+        pilihan1 = input("Masukkan pilihan Anda (1-2): ")
         if pilihan1 in ("1", "2"):
             line()
             return int(pilihan1)
-        line()
-        error("Inputan tidak valid. Silahkan coba lagi.")
-        
+        error("Input tidak valid. Coba lagi.")
 
 def error(text):
-    t = str(text)
     space()
-    print (f"❌  {t}")
+    print(f"❌  {text}")
 
 def info(text):
-    t = str(text)
     space()
-    print (f"ℹ️  {t}")
+    print(f"ℹ️  {text}")
 
 def penutup():
     space()
     line()
-    center("Terima kasih telah menggunakan")
-    center("Kalkulator Sedikit Berguna ini.")
-    center("Semoga berkesan baik bagi pengguna.")
+    center("🙏 TERIMA KASIH 🙏")
+    center("Sudah menggunakan KBS Calculator.")
+    center("Sampai jumpa di kesempatan berikutnya!")
     line()
-    
