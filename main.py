@@ -1,10 +1,6 @@
 from utills import pembuka, menu, error, space
-<<<<<<< HEAD
 from features.FPBdanKPK import eksekusi4
-=======
 from features.statistik import fitur_statistik
-
->>>>>>> b3cd6f3dbe6e52f8accee6db53fec2f606459585
 
 pembuka()
 while True:
