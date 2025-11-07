@@ -17,6 +17,15 @@ def pembuka():
     center("Dapat melakukan beberapa fungsi pilihan")
     line()
 
+def pembuka4():
+    space()
+    line()
+    center("~~ FPB daN KPK ~~")
+    center("Fitur ini  dapat menampilkan FPB dan KPK")
+    center("dari beberapa bilangan yang diinput")
+    center("(FPB dan KPK hanya didefinisikan untuk bilangan positif)")
+    line()
+    
 def menu():
     while True:
         space()
