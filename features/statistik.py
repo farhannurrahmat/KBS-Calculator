@@ -1,10 +1,12 @@
+import re
 from collections import Counter
+from utills import line, space, pembuka2, center, error
+from InputValidation import validasi_data_input
 
 def hitung_statistik(data):
-    """Fungsi untuk menghitung mean, median, modus, maksimum, dan minimum."""
     if not data:
         return None, None, None, None, None
-
+    
     data.sort()
     n = len(data)
 
@@ -24,15 +26,35 @@ def hitung_statistik(data):
 
 
 def fitur_statistik():
-    """Fungsi utama fitur statistik (dipanggil di menu utama)."""
-    print("\n=== FITUR STATISTIK SEDERHANA ===")
-   
-    angka = list(map(int, input("Masukkan kumpulan bilangan (pisahkan dengan spasi): ").split()))
-    mean, median, modus, maksimum, minimum = hitung_statistik(angka)
+    pembuka2()
+    while True:
+        space()
+        data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+        if not data_input:
+            continue
+        if data_input.lower() == "back":
+            break
 
-    print("\n=== HASIL STATISTIK SEDERHANA===")
-    print(f"Mean      : {mean:.2f}")
-    print(f"Median    : {median}")
-    print(f"Modus     : {modus if modus is not None else 'Tidak ada'}")
-    print(f"Maksimum  : {maksimum}")
-    print(f"Minimum   : {minimum}\n")
+        try:
+            pattern = r"^[0-9\s]+$"
+            result = re.match(pattern, data_input)
+            if result:
+                angka_str = data_input.split()
+                angka = [float(i) for i in angka_str]
+
+                mean, median, modus, maksimum, minimum = hitung_statistik(angka)
+
+                space()
+                print(f"Mean     : {mean:.2f}")
+                print(f"Median   : {median}")
+                print(f"Modus    : {modus if modus is not None else 'Tidak ada'}")
+                print(f"Maksimum : {maksimum}")
+                print(f"Minimum  : {minimum}")
+                space()
+                line()
+                continue
+            else:
+                raise ValueError
+        except:
+            error("Input tidak valid. Silakan coba lagi.")
+            continue

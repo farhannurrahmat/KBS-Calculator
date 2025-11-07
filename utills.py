@@ -17,10 +17,18 @@ def pembuka():
     center("Dapat melakukan beberapa fungsi pilihan")
     line()
 
+def pembuka2():
+    space()
+    line()
+    center("~~ Statisik Sederhana ~~")
+    center("Fitur ini dapat menampilkan beberapa")
+    center("dari statistik sederhana dari inputan.")
+    line()
+
 def pembuka4():
     space()
     line()
-    center("~~ FPB daN KPK ~~")
+    center("~~ FPB dan KPK ~~")
     center("Fitur ini  dapat menampilkan FPB dan KPK")
     center("dari beberapa bilangan yang diinput")
     center("(FPB dan KPK hanya didefinisikan untuk bilangan positif)")
@@ -38,7 +46,7 @@ def menu():
         print("5. 📐 Bangun Ruang")
         print("6. 🔄 Konversi Satuan")
         print("7. 🚪 Keluar")
-        pilihan = input("\nMasukkan pilihan anda: ")
+        pilihan = input("Masukkan pilihan anda: ")
         if pilihan in ("1", "2", "3", "4", "5", "6", "7"):
             line()
             return int(pilihan)
