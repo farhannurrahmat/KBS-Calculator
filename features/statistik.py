@@ -36,7 +36,7 @@ def fitur_statistik():
             break
 
         try:
-            pattern = r"^[0-9\s]+$"
+            pattern = r"^[0-9\s.-]+$"
             result = re.match(pattern, data_input)
             if result:
                 angka_str = data_input.split()

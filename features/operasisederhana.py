@@ -1,5 +1,6 @@
-# KBS Calculator - Operasi Sederhana
-# Oleh: Vivien
+import re
+from utills import menu1, error, space, pembuka1
+from InputValidation import validasi_data_input
 
 def operasi_tambah(angka_list):
     return sum(angka_list)
@@ -20,44 +21,104 @@ def operasi_bagi(angka_list):
     hasil = angka_list[0]
     for a in angka_list[1:]:
         if a == 0:
-            return "Error: Tidak bisa dibagi dengan nol!"
+            return None
         hasil /= a
     return hasil
 
-def menu_operasi():
-    print("=== MENU OPERASI SEDERHANA ===")
-    print("1. Penjumlahan (+)")
-    print("2. Pengurangan (-)")
-    print("3. Perkalian (*)")
-    print("4. Pembagian (/)")
-    print("5. Keluar")
-    print("==============================")
+def eksekusi1():
+    pembuka1()
+    while True:
+        pilihan1 = menu1()
+        match pilihan1:
+            case 1:  # Penjumlahan
+                while True:
+                    space()
+                    data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    if not data_input:
+                        continue
+                    if data_input.lower() == "back":
+                        break
+                    try:
+                        if re.match(r"^[0-9\s.-]+$", data_input):
+                            angka = [float(i) for i in data_input.split()]
+                            hasil = operasi_tambah(angka)
+                            space()
+                            print(f"Hasilnya adalah {hasil:.3f}")
+                            break
+                        else:
+                            raise ValueError
+                    except:
+                        error("Input tidak valid. Silakan coba lagi.")
+                        continue
 
-while True:
-    menu_operasi()
-    pilihan = input("Pilih operasi (1-5): ")
+            case 2:  # Pengurangan
+                while True:
+                    space()
+                    data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    if not data_input:
+                        continue
+                    if data_input.lower() == "back":
+                        break
+                    try:
+                        if re.match(r"^[0-9\s.-]+$", data_input):
+                            angka = [float(i) for i in data_input.split()]
+                            hasil = operasi_kurang(angka)
+                            space()
+                            print(f"Hasilnya adalah {hasil:.3f}")
+                            break
+                        else:
+                            raise ValueError
+                    except:
+                        error("Input tidak valid. Silakan coba lagi.")
+                        continue
 
-    if pilihan == '5':
-        print("Terima kasih telah menggunakan KBS Calculator!")
-        break
+            case 3:  # Perkalian
+                while True:
+                    space()
+                    data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    if not data_input:
+                        continue
+                    if data_input.lower() == "back":
+                        break
+                    try:
+                        if re.match(r"^[0-9\s.-]+$", data_input):
+                            angka = [float(i) for i in data_input.split()]
+                            hasil = operasi_kali(angka)
+                            space()
+                            print(f"Hasilnya adalah {hasil:.3f}")
+                            break
+                        else:
+                            raise ValueError
+                    except:
+                        error("Input tidak valid. Silakan coba lagi.")
+                        continue
 
-    angka_input = input("Masukkan angka-angka (pisahkan dengan spasi): ")
-    angka_list = list(map(float, angka_input.split()))
+            case 4:  # Pembagian
+                while True:
+                    space()
+                    data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    if not data_input:
+                        continue
+                    if data_input.lower() == "back":
+                        break
+                    try:
+                        if re.match(r"^[0-9\s.-]+$", data_input):
+                            angka = [float(i) for i in data_input.split()]
+                            if len(angka) < 2:
+                                error("Masukkan minimal dua angka untuk pembagian.")
+                                continue
+                            hasil = operasi_bagi(angka)
+                            if hasil is None:
+                                error("Terjadi kesalahan: tidak bisa membagi dengan nol.")
+                                continue
+                            space()
+                            print(f"Hasilnya adalah {hasil:.3f}")
+                            break
+                        else:
+                            raise ValueError
+                    except:
+                        error("Input tidak valid. Silakan coba lagi.")
+                        continue
 
-    if pilihan == '1':
-        hasil = operasi_tambah(angka_list)
-        simbol = '+'
-    elif pilihan == '2':
-        hasil = operasi_kurang(angka_list)
-        simbol = '-'
-    elif pilihan == '3':
-        hasil = operasi_kali(angka_list)
-        simbol = '*'
-    elif pilihan == '4':
-        hasil = operasi_bagi(angka_list)
-        simbol = '/'
-    else:
-        print("Pilihan tidak valid!")
-        continue
-
-    print(f"Hasil dari operasi {simbol} adalah: {hasil}\n")
+            case 5:  # Keluar
+                break

@@ -17,6 +17,15 @@ def pembuka():
     center("Dapat melakukan beberapa fungsi pilihan")
     line()
 
+def pembuka1():
+    space()
+    line()
+    center("~~ Operasi Sederhana ~~")
+    center("Fitur ini dapat melakukan pengoperasian sederhana")
+    center("dengan melakukan satu kali inputan")
+    center("tetapi belum dapat pengoperasian campuran.")
+    line()
+
 def pembuka2():
     space()
     line()
@@ -50,6 +59,23 @@ def menu():
         if pilihan in ("1", "2", "3", "4", "5", "6", "7"):
             line()
             return int(pilihan)
+        line()
+        error("Inputan tidak valid. Silahkan coba lagi.")
+
+def menu1():
+    while True:
+        space()
+        line()
+        print("Silahkan memilih menu berikut:")
+        print("1. Penjumlahan")
+        print("2. Pengurangan")
+        print("3. Perkalian")
+        print("4. Pembagian")
+        print("5. Keluar")
+        pilihan1 = input("Masukkan pilihan anda: ")
+        if pilihan1 in ("1", "2", "3", "4", "5"):
+            line()
+            return int(pilihan1)
         line()
         error("Inputan tidak valid. Silahkan coba lagi.")
         
