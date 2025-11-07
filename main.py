@@ -1,4 +1,5 @@
 from utills import pembuka, menu, error, space
+from features.FPBdanKPK import eksekusi4
 
 pembuka()
 while True:
@@ -14,8 +15,7 @@ while True:
             space()
             print("Fitur ini belum tersedia.")
         case 4:
-            space()
-            print("Fitur ini belum tersedia.")
+            eksekusi4()
         case 5:
             space()
             print("Fitur ini belum tersedia.")
