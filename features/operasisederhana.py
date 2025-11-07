@@ -1,5 +1,5 @@
 import re
-from utills import menu1, error, space, pembuka1
+from utills import menu1, error, space, pembuka1, info, line
 from InputValidation import validasi_data_input
 
 def operasi_tambah(angka_list):
@@ -25,6 +25,20 @@ def operasi_bagi(angka_list):
         hasil /= a
     return hasil
 
+
+def tampilkan_tabel(judul, data_input, hasil):
+    line()
+    space()
+    print("+-------------------------------------------+")
+    print(f"| Operasi : {judul:<32}|")
+    print("+-------------------------------------------+")
+    print(f"| Input   : {data_input:<32}|")
+    print(f"| Hasil   : {hasil:<32.2f}|")
+    print("+-------------------------------------------+")
+    space()
+    line()
+
+
 def eksekusi1():
     pembuka1()
     while True:
@@ -32,8 +46,9 @@ def eksekusi1():
         match pilihan1:
             case 1:  # Penjumlahan
                 while True:
-                    space()
+                    info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -42,18 +57,17 @@ def eksekusi1():
                         if re.match(r"^[0-9\s.-]+$", data_input):
                             angka = [float(i) for i in data_input.split()]
                             hasil = operasi_tambah(angka)
-                            space()
-                            print(f"Hasilnya adalah {hasil:.3f}")
+                            tampilkan_tabel("Penjumlahan", data_input, hasil)
                             break
                         else:
                             raise ValueError
                     except:
-                        error("Input tidak valid. Silakan coba lagi.")
+                        error("Inputan harus berupa angka. Silakan coba lagi.")
                         continue
 
             case 2:  # Pengurangan
                 while True:
-                    space()
+                    info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
                     if not data_input:
                         continue
@@ -63,18 +77,17 @@ def eksekusi1():
                         if re.match(r"^[0-9\s.-]+$", data_input):
                             angka = [float(i) for i in data_input.split()]
                             hasil = operasi_kurang(angka)
-                            space()
-                            print(f"Hasilnya adalah {hasil:.3f}")
+                            tampilkan_tabel("Pengurangan", data_input, hasil)
                             break
                         else:
                             raise ValueError
                     except:
-                        error("Input tidak valid. Silakan coba lagi.")
+                        error("Inputan harus berupa angka. Silakan coba lagi.")
                         continue
 
             case 3:  # Perkalian
                 while True:
-                    space()
+                    info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
                     if not data_input:
                         continue
@@ -84,18 +97,17 @@ def eksekusi1():
                         if re.match(r"^[0-9\s.-]+$", data_input):
                             angka = [float(i) for i in data_input.split()]
                             hasil = operasi_kali(angka)
-                            space()
-                            print(f"Hasilnya adalah {hasil:.3f}")
+                            tampilkan_tabel("Perkalian", data_input, hasil)
                             break
                         else:
                             raise ValueError
                     except:
-                        error("Input tidak valid. Silakan coba lagi.")
+                        error("Inputan harus berupa angka. Silakan coba lagi.")
                         continue
 
             case 4:  # Pembagian
                 while True:
-                    space()
+                    info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
                     if not data_input:
                         continue
@@ -111,14 +123,13 @@ def eksekusi1():
                             if hasil is None:
                                 error("Terjadi kesalahan: tidak bisa membagi dengan nol.")
                                 continue
-                            space()
-                            print(f"Hasilnya adalah {hasil:.3f}")
+                            tampilkan_tabel("Pembagian", data_input, hasil)
                             break
                         else:
                             raise ValueError
                     except:
-                        error("Input tidak valid. Silakan coba lagi.")
+                        error("Inputan harus berupa angka. Silakan coba lagi.")
                         continue
 
-            case 5:  # Keluar
+            case 5:
                 break

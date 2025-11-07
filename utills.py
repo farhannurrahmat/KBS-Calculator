@@ -5,8 +5,7 @@ def space():
     print ("")
 
 def center(text):
-    t = str(text)
-    print (f"| {t:^60} |")
+    print (f"| {text:^60} |")
 
 def pembuka():
     line()
@@ -27,6 +26,7 @@ def pembuka1():
     line()
 
 def pembuka2():
+    info("Anda Sekarang Masuk ke program")
     space()
     line()
     center("~~ Statisik Sederhana ~~")
@@ -71,9 +71,37 @@ def menu1():
         print("2. Pengurangan")
         print("3. Perkalian")
         print("4. Pembagian")
-        print("5. Keluar")
+        print("5. Kembali")
         pilihan1 = input("Masukkan pilihan anda: ")
         if pilihan1 in ("1", "2", "3", "4", "5"):
+            line()
+            return int(pilihan1)
+        line()
+        error("Inputan tidak valid. Silahkan coba lagi.")
+
+def menu2():
+    while True:
+        space()
+        line()
+        print("Silahkan memilih menu berikut:")
+        print("1. Lanjut")
+        print("2. Kembali")
+        pilihan1 = input("Masukkan pilihan anda: ")
+        if pilihan1 in ("1", "2"):
+            line()
+            return int(pilihan1)
+        line()
+        error("Inputan tidak valid. Silahkan coba lagi.")
+
+def menu4():
+    while True:
+        space()
+        line()
+        print("Silahkan memilih menu berikut:")
+        print("1. Lanjut")
+        print("2. Kembali")
+        pilihan1 = input("Masukkan pilihan anda: ")
+        if pilihan1 in ("1", "2"):
             line()
             return int(pilihan1)
         line()
@@ -83,5 +111,18 @@ def menu1():
 def error(text):
     t = str(text)
     space()
-    print (f"❌ {t}")
+    print (f"❌  {t}")
+
+def info(text):
+    t = str(text)
+    space()
+    print (f"ℹ️  {t}")
+
+def penutup():
+    space()
+    line()
+    center("Terima kasih telah menggunakan")
+    center("Kalkulator Sedikit Berguna ini.")
+    center("Semoga berkesan baik bagi pengguna.")
+    line()
     

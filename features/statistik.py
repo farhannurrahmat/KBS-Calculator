@@ -1,6 +1,6 @@
 import re
 from collections import Counter
-from utills import line, space, pembuka2, center, error
+from utills import line, space, pembuka2, center, error, menu2, info
 from InputValidation import validasi_data_input
 
 def hitung_statistik(data):
@@ -25,36 +25,49 @@ def hitung_statistik(data):
     return mean, median, modus, max(data), min(data)
 
 
+def tampilkan_tabel(mean, median, modus, maksimum, minimum):
+    space()
+    print("+-----------------+---------------------+")
+    print("|    Statistik    |        Nilai        |")
+    print("+-----------------+---------------------+")
+    print(f"| Mean            | {mean:<20.2f}|")
+    print(f"| Median          | {median:<20}|")
+    print(f"| Modus           | {modus if modus is not None else 'Tidak ada':<20}|")
+    print(f"| Maksimum        | {maksimum:<20}|")
+    print(f"| Minimum         | {minimum:<20}|")
+    print("+-----------------+---------------------+")
+    space()
+    line()
+
+
 def fitur_statistik():
     pembuka2()
     while True:
-        space()
-        data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
-        if not data_input:
-            continue
-        if data_input.lower() == "back":
-            break
+        pilihan2 = menu2()
+        match pilihan2:
+            case 2:
+                break
+            case 1:
+                while True:
+                    info("Ketik 'back' untuk kembali.")
+                    data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    if not data_input:
+                        continue
+                    if data_input.lower() == "back":
+                        break
 
-        try:
-            pattern = r"^[0-9\s.-]+$"
-            result = re.match(pattern, data_input)
-            if result:
-                angka_str = data_input.split()
-                angka = [float(i) for i in angka_str]
+                    try:
+                        pattern = r"^[0-9\s.-]+$"
+                        result = re.match(pattern, data_input)
+                        if result:
+                            angka_str = data_input.split()
+                            angka = [float(i) for i in angka_str]
 
-                mean, median, modus, maksimum, minimum = hitung_statistik(angka)
-
-                space()
-                print(f"Mean     : {mean:.2f}")
-                print(f"Median   : {median}")
-                print(f"Modus    : {modus if modus is not None else 'Tidak ada'}")
-                print(f"Maksimum : {maksimum}")
-                print(f"Minimum  : {minimum}")
-                space()
-                line()
-                continue
-            else:
-                raise ValueError
-        except:
-            error("Input tidak valid. Silakan coba lagi.")
-            continue
+                            mean, median, modus, maksimum, minimum = hitung_statistik(angka)
+                            tampilkan_tabel(mean, median, modus, maksimum, minimum)
+                            break
+                        else:
+                            raise ValueError
+                    except:
+                        error("Inputan harus berupa angka. Silakan coba lagi.")
+                        continue
