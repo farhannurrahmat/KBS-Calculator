@@ -1,9 +1,7 @@
 from collections import Counter
 
-# Input: masukkan angka dipisah spasi, misal "1 2 3 4 5"
-angka = list(map(int, input("Masukkan kumpulan bilangan (pisahkan dengan spasi): ").split()))
-
 def hitung_statistik(data):
+    """Fungsi untuk menghitung mean, median, modus, maksimum, dan minimum."""
     if not data:
         return None, None, None, None, None
 
@@ -11,22 +9,30 @@ def hitung_statistik(data):
     n = len(data)
 
     mean = sum(data) / n
-    median = (data[n // 2] if n % 2 != 0 else (data[n // 2 - 1] + data[n // 2]) / 2)
+    median = data[n // 2] if n % 2 != 0 else (data[n // 2 - 1] + data[n // 2]) / 2
 
     frekuensi = Counter(data)
     max_freq = max(frekuensi.values())
-    mode = [k for k, v in frekuensi.items() if v == max_freq]
+    modus = [k for k, v in frekuensi.items() if v == max_freq]
 
-    # Jika semua angka unik → tidak ada modus
-    if len(mode) == n:
-        mode = None
+    if len(modus) == n:
+        modus = None
+    elif len(modus) == 1:
+        modus = modus[0]
 
-    return mean, median, mode, max(data), min(data)
+    return mean, median, modus, max(data), min(data)
 
-mean, median, mode, maksimum, minimum = hitung_statistik(angka)
 
-print(f"Mean      : {mean}")
-print(f"Median    : {median}")
-print(f"Modus     : {mode}")
-print(f"Maksimum  : {maksimum}")
-print(f"Minimum   : {minimum}")
+def fitur_statistik():
+    """Fungsi utama fitur statistik (dipanggil di menu utama)."""
+    print("\n=== FITUR STATISTIK SEDERHANA ===")
+   
+    angka = list(map(int, input("Masukkan kumpulan bilangan (pisahkan dengan spasi): ").split()))
+    mean, median, modus, maksimum, minimum = hitung_statistik(angka)
+
+    print("\n=== HASIL STATISTIK SEDERHANA===")
+    print(f"Mean      : {mean:.2f}")
+    print(f"Median    : {median}")
+    print(f"Modus     : {modus if modus is not None else 'Tidak ada'}")
+    print(f"Maksimum  : {maksimum}")
+    print(f"Minimum   : {minimum}\n")
