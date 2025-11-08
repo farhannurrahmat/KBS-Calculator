@@ -1,5 +1,5 @@
 import re
-from utills import menu5, error, space, pembuka5, info
+from utills import menu5, error, space, pembuka5, info, line
 from InputValidation import validasi_data_input
 
 def hitung_luas_kubus():
@@ -33,21 +33,10 @@ def menu_perhitungan():
   aaaa
 
 def eksekusi5():
-  pembuka5()
-  while True:
-    pilihan5 = menu5()
-    match pilihan5:
-        case 1:
-            while True:
-                info("Ketik 'back' untuk kembali")
-                data_input = validasi_data_input
-
-
-
-    pembuka1()
+    pembuka5()
     while True:
-        pilihan1 = menu1()
-        match pilihan1:
+        pilihan5 = menu5()
+        match pilihan5:
             case 1:  # Penjumlahan
                 while True:
                     info("Ketik 'back' untuk kembali")
