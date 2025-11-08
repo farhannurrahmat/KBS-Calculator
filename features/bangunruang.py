@@ -3,34 +3,34 @@ from utills import menu5, error, space, pembuka5, info, line
 from InputValidation import validasi_data_input
 
 def hitung_luas_kubus():
-  aaaa
+  pass
 
 def hitung_volume_kubus():
-  aaaa
+  pass
 
 def hitung_luas_balok():
-  aaaa
+  pass
 
 def hitung_volume_balok():
-  aaaa
+  pass
 
 def hitung_luas_tabung():
-  aaaa
+  pass
 
 def hitung_volume_tabung():
-  aaaa
+  pass
 
 def hitung_luas_bola():
-  aaaa
+  pass
 
 def hitung_volume_bola():
-  aaaa
+  pass
 
 def tampilkan_menu5():
-  aaaa
+  pass
 
 def menu_perhitungan():
-  aaaa
+  pass
 
 def eksekusi5():
     pembuka5()
