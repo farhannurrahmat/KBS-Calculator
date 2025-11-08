@@ -84,6 +84,13 @@ def pembuka5():
         ("Seperti kubus, balok, prisma, tabung, dan lainnya.", WHITE)
     ])
 
+def pembuka6():
+    sub_header("Konversi Satuan", [
+        ("🔄 KONVERSI SATUAN 🔄", YELLOW),
+        ("Ubah panjang, massa, waktu, suhu, dan lainnya.", WHITE),
+        ("Masukkan nilai dan satuan asal dengan benar.", WHITE)
+    ])
+
 # === Menu Utama ===
 def menu():
     while True:
@@ -134,10 +141,10 @@ def menu2():
         print(f"{WHITE}1.{RESET} ▶️  Lanjut")
         print(f"{WHITE}2.{RESET} 🔙 Kembali")
         line(GREEN)
-        pilihan1 = input(f"{YELLOW}Masukkan pilihan Anda (1-2): {RESET}")
-        if pilihan1 in ("1", "2"):
+        pilihan2 = input(f"{YELLOW}Masukkan pilihan Anda (1-2): {RESET}")
+        if pilihan2 in ("1", "2"):
             line(GREEN)
-            return int(pilihan1)
+            return int(pilihan2)
         error("Input tidak valid. Coba lagi.")
 
 # === Submenu Faktorial ===
@@ -153,10 +160,10 @@ def menu3():
         print(f"{WHITE}4.{RESET} ➗ Pembagian")
         print(f"{WHITE}5.{RESET} 🔙 Kembali")
         line(GREEN)
-        pilihan1 = input(f"{YELLOW}Pilih operasi (1-5): {RESET}")
-        if pilihan1 in ("1", "2", "3", "4", "5"):
+        pilihan3 = input(f"{YELLOW}Pilih operasi (1-5): {RESET}")
+        if pilihan3 in ("1", "2", "3", "4", "5"):
             line(GREEN)
-            return int(pilihan1)
+            return int(pilihan3)
         error("Input tidak valid. Coba lagi.")
 
 # === Submenu FPB & KPK ===
@@ -169,10 +176,10 @@ def menu4():
         print(f"{WHITE}1.{RESET} ▶️  Lanjut")
         print(f"{WHITE}2.{RESET} 🔙 Kembali")
         line(GREEN)
-        pilihan1 = input(f"{YELLOW}Masukkan pilihan Anda (1-2): {RESET}")
-        if pilihan1 in ("1", "2"):
+        pilihan4 = input(f"{YELLOW}Masukkan pilihan Anda (1-2): {RESET}")
+        if pilihan4 in ("1", "2"):
             line(GREEN)
-            return int(pilihan1)
+            return int(pilihan4)
         error("Input tidak valid. Coba lagi.")
 
 # === Submenu Bangun Ruang ===
@@ -188,10 +195,29 @@ def menu5():
         print(f"{WHITE}4.{RESET} Bola")
         print(f"{WHITE}5.{RESET} Kembali")
         line(GREEN)
-        pilihan1 = input(f"{YELLOW}Pilih bangun ruang (1-5): {RESET}")
-        if pilihan1 in ("1", "2", "3", "4", "5"):
+        pilihan5 = input(f"{YELLOW}Pilih bangun ruang (1-5): {RESET}")
+        if pilihan5 in ("1", "2", "3", "4", "5"):
             line(GREEN)
-            return int(pilihan1)
+            return int(pilihan5)
+        error("Input tidak valid. Coba lagi.")
+
+# === Submenu Konversi Satuan ===
+def menu6():
+    while True:
+        space()
+        line(GREEN)
+        center("🔄 KONVERSI SATUAN 🔄", YELLOW)
+        line(GREEN)
+        print(f"{WHITE}1.{RESET} Panjang")
+        print(f"{WHITE}2.{RESET} Massa")
+        print(f"{WHITE}3.{RESET} Waktu")
+        print(f"{WHITE}4.{RESET} Suhu")
+        print(f"{WHITE}5.{RESET} Kembali")
+        line(GREEN)
+        pilihan6 = input(f"{YELLOW}Pilih bangun ruang (1-5): {RESET}")
+        if pilihan6 in ("1", "2", "3", "4", "5"):
+            line(GREEN)
+            return int(pilihan6)
         error("Input tidak valid. Coba lagi.")
 
 # === Pesan Sistem ===
