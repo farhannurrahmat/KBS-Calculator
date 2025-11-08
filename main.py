@@ -2,6 +2,7 @@ from utills import pembuka, menu, error, space, penutup
 from features.FPBdanKPK import eksekusi4
 from features.statistik import fitur_statistik
 from features.operasisederhana import eksekusi1
+from features.faktorial import eksekusi3
 from features.bangunruang import eksekusi5
 
 
@@ -15,8 +16,7 @@ while True:
         case 2:
             fitur_statistik()
         case 3:
-            space()
-            print("Fitur ini belum tersedia.")
+            eksekusi3()
         case 4:
             eksekusi4()
         case 5:
