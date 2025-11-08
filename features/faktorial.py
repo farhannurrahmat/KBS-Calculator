@@ -72,7 +72,6 @@ def eksekusi3():
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
-                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
