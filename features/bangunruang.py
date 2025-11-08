@@ -2,6 +2,22 @@ import re
 from utills import menu5, error, space, pembuka5, info, line
 from InputValidation import validasi_data_input
 
+def menu5():
+    while True:
+        space()
+        line()
+        print("Silahkan pilih jenis bangun ruang yang mau dihitung:")
+        print("1. Kubus")
+        print("2. Balok")
+        print("3. Tabung")
+        print("4. Bola")
+        pilihan5 = input("Masukkan pilihan anda: ")
+        if pilihan5 in ("1", "2", "3", "4"):
+            line()
+            return int(pilihan5)
+        line()
+        error("Inputan tidak valid. Silahkan coba lagi.")
+
 def hitung_luas_kubus():
   pass
 
