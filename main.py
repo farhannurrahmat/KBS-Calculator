@@ -21,9 +21,7 @@ while True:
         case 4:
             eksekusi4()
         case 5:
-            # eksekusi5()
-            space()
-            print("Fitur ini belum tersedia.")
+            eksekusi5()
         case 6:
             eksekusi6()
         case 7:
