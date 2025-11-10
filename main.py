@@ -28,5 +28,4 @@ while True:
             penutup()
             break
         case _ :
-            space()
             error("Pilihan tidak tersedia.")

@@ -81,7 +81,7 @@ def pembuka5():
     sub_header("Bangun Ruang", [
         ("📐 BANGUN RUANG 📐", YELLOW),
         ("Hitung volume dan luas permukaan berbagai bentuk 3D.", WHITE),
-        ("Seperti kubus, balok, prisma, tabung, dan lainnya.", WHITE)
+        ("Seperti kubus, balok, tabung, dan lainnya.", WHITE)
     ])
 
 def pembuka6():
@@ -121,7 +121,7 @@ def menu1():
         line(GREEN)
         print(f"{WHITE}1.{RESET} ➕ Penjumlahan")
         print(f"{WHITE}2.{RESET} ➖ Pengurangan")
-        print(f"{WHITE}3.{RESET} ✖️ Perkalian")
+        print(f"{WHITE}3.{RESET} ✖️  Perkalian")
         print(f"{WHITE}4.{RESET} ➗ Pembagian")
         print(f"{WHITE}5.{RESET} 🔙 Kembali")
         line(GREEN)
@@ -156,7 +156,7 @@ def menu3():
         line(GREEN)
         print(f"{WHITE}1.{RESET} ➕ Penjumlahan")
         print(f"{WHITE}2.{RESET} ➖ Pengurangan")
-        print(f"{WHITE}3.{RESET} ✖️ Perkalian")
+        print(f"{WHITE}3.{RESET} ✖️  Perkalian")
         print(f"{WHITE}4.{RESET} ➗ Pembagian")
         print(f"{WHITE}5.{RESET} 🔙 Kembali")
         line(GREEN)
