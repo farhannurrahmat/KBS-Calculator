@@ -24,18 +24,22 @@ def hitung_statistik(data):
 
     return mean, median, modus, max(data), min(data)
 
+# Fungsi bantu untuk menampilkan teks di tengah layar
+def center_print(teks, width=64):
+    print(teks.center(width))
+
 
 def tampilkan_tabel(mean, median, modus, maksimum, minimum):
     space()
-    print("+-----------------+---------------------+")
-    print("|    Statistik    |        Nilai        |")
-    print("+-----------------+---------------------+")
-    print(f"| Mean            | {mean:<20.2f}|")
-    print(f"| Median          | {median:<20}|")
-    print(f"| Modus           | {modus if modus is not None else 'Tidak ada':<20}|")
-    print(f"| Maksimum        | {maksimum:<20}|")
-    print(f"| Minimum         | {minimum:<20}|")
-    print("+-----------------+---------------------+")
+    center_print("+-----------------+---------------------+")
+    center_print("|    Statistik    |        Nilai        |")
+    center_print("+-----------------+---------------------+")
+    center_print(f"| Mean            | {mean:<20.2f}|")
+    center_print(f"| Median          | {median:<20}|")
+    center_print(f"| Modus           | {modus if modus is not None else 'Tidak ada':<20}|")
+    center_print(f"| Maksimum        | {maksimum:<20}|")
+    center_print(f"| Minimum         | {minimum:<20}|")
+    center_print("+-----------------+---------------------+")
     space()
     line()
 

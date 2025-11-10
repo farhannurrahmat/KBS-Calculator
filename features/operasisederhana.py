@@ -2,6 +2,10 @@ import re
 from utills import menu1, error, space, pembuka1, info, line
 from InputValidation import validasi_data_input
 
+# Fungsi bantu untuk mencetak teks di tengah layar
+def center_print(teks, width=64):
+    print(teks.center(width))
+
 def operasi_tambah(angka_list):
     return sum(angka_list)
 
@@ -25,25 +29,23 @@ def operasi_bagi(angka_list):
         hasil /= a
     return hasil
 
-
+# Tabel hasil di tengah layar
 def tampilkan_tabel(judul, data_input, hasil):
     angka_list = data_input.split()
+    space()
     line()
     space()
-    print("+-------------------------------------------+")
-    print(f"| Operasi : {judul:<32}|")
-    print("+-------------------------------------------+")
-
+    center_print("+-------------------------------------------+")
+    center_print(f"| Operasi : {judul:<31} |")
+    center_print("+-------------------------------------------+")
     for i, angka in enumerate(angka_list, start=1):
-        print(f"| Angka {i:<2}: {angka:<32}|")
-
-    print("+-------------------------------------------+")
-    print(f"| Hasil   : {hasil:<32.2f}|")
-    print("+-------------------------------------------+")
+        center_print(f"| Angka {i:<2}: {angka:<31} |")
+    center_print("+-------------------------------------------+")
+    center_print(f"| Hasil   : {hasil:<31.2f} |")
+    center_print("+-------------------------------------------+")
     space()
     line()
-
-
+    space()
 
 def eksekusi1():
     pembuka1()
@@ -68,13 +70,14 @@ def eksekusi1():
                         else:
                             raise ValueError
                     except:
-                        error("Inputan harus berupa angka. Silakan coba lagi.")
+                        error("Inputan harus berupa angka.")
                         continue
 
             case 2:  # Pengurangan
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -88,13 +91,14 @@ def eksekusi1():
                         else:
                             raise ValueError
                     except:
-                        error("Inputan harus berupa angka. Silakan coba lagi.")
+                        error("Inputan harus berupa angka.")
                         continue
 
             case 3:  # Perkalian
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -108,13 +112,14 @@ def eksekusi1():
                         else:
                             raise ValueError
                     except:
-                        error("Inputan harus berupa angka. Silakan coba lagi.")
+                        error("Inputan harus berupa angka.")
                         continue
 
             case 4:  # Pembagian
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
+                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -127,14 +132,14 @@ def eksekusi1():
                                 continue
                             hasil = operasi_bagi(angka)
                             if hasil is None:
-                                error("Terjadi kesalahan: tidak bisa membagi dengan nol.")
+                                error("Tidak bisa membagi dengan nol.")
                                 continue
                             tampilkan_tabel("Pembagian", data_input, hasil)
                             break
                         else:
                             raise ValueError
                     except:
-                        error("Inputan harus berupa angka. Silakan coba lagi.")
+                        error("Inputan harus berupa angka.")
                         continue
 
             case 5:

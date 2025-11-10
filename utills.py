@@ -11,6 +11,10 @@ WHITE = "\033[97m"
 RESET = "\033[0m"
 BOLD = "\033[1m"
 
+# Fungsi bantu untuk menampilkan teks di tengah layar
+def center_print(teks, width=64):
+    print(teks.center(width))
+
 # === Fungsi Tampilan Dasar ===
 def line(color=CYAN):
     print(f"{color}{'=' * 64}{RESET}")
@@ -154,14 +158,15 @@ def menu3():
         line(GREEN)
         center("🧮 OPERASI FAKTORIAL 🧮", YELLOW)
         line(GREEN)
-        print(f"{WHITE}1.{RESET} ➕ Penjumlahan")
-        print(f"{WHITE}2.{RESET} ➖ Pengurangan")
-        print(f"{WHITE}3.{RESET} ✖️  Perkalian")
-        print(f"{WHITE}4.{RESET} ➗ Pembagian")
-        print(f"{WHITE}5.{RESET} 🔙 Kembali")
+        print(f"{WHITE}1.{RESET} ➕ Penjumlahan Faktorial")
+        print(f"{WHITE}2.{RESET} ➖ Pengurangan Faktorial")
+        print(f"{WHITE}3.{RESET} ✖️ Perkalian Faktorial")
+        print(f"{WHITE}4.{RESET} ➗ Pembagian Faktorial")
+        print(f"{WHITE}5.{RESET} ❗ Faktorial Tunggal")
+        print(f"{WHITE}6.{RESET} 🔙 Kembali")
         line(GREEN)
         pilihan3 = input(f"{YELLOW}Pilih operasi (1-5): {RESET}")
-        if pilihan3 in ("1", "2", "3", "4", "5"):
+        if pilihan3 in ("1", "2", "3", "4", "5", "6"):
             line(GREEN)
             return int(pilihan3)
         error("Input tidak valid. Coba lagi.")
@@ -200,6 +205,29 @@ def menu5():
             line(GREEN)
             return int(pilihan5)
         error("Input tidak valid. Coba lagi.")
+
+def menu_hitung_luasorvolume():
+    while True:
+        space()
+        line(GREEN)
+        center_print("PILIH PERHITUNGAN")
+        line(GREEN)
+        print("1. Luas")
+        print("2. Volume")
+        print("3. Kembali")
+        line(GREEN)
+        pilihan = input("Masukkan pilihan (1-3): ").strip()
+        line(GREEN)
+
+        match pilihan:
+            case "1":
+                return "luas"
+            case "2":
+                return "volume"
+            case "3":
+                return "back"
+            case _:
+                error("Inputan tidak valid. Silahkan coba lagi")
 
 # === Submenu Konversi Satuan ===
 def menu6():

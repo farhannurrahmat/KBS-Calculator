@@ -1,26 +1,11 @@
 import re
 import math
-from utills import menu5, error, space, pembuka5, info, line
+from utills import menu5, error, space, pembuka5, info, line, menu_hitung_luasorvolume
 from InputValidation import validasi_data_input
 
-def menu_hitung_luasorvolume():
-    while True:
-        print("\n=== PILIH PERHITUNGAN ===")
-        print("1. Luas")
-        print("2. Volume")
-        print("3. Kembali")
-
-        pilihan = input("Masukkan pilihan (1-3): ").strip()
-
-        match pilihan:
-            case "1":
-                return "luas"
-            case "2":
-                return "volume"
-            case "3":
-                return "back"
-            case _:
-                error("Inputan tidak valid. Silahkan coba lagi")
+# Fungsi bantu untuk menampilkan teks di tengah layar
+def center_print(teks, width=64):
+    print(teks.center(width))
 
 # ===== Rumus Luas dan Volume setiap Bangun Ruang =====
 def hitung_luas_kubus(sisi):
@@ -96,14 +81,15 @@ def proses_hitung(nama_bangun, jumlah_input, hitung_luas, hitung_volume):
             total = kolom1 + kolom2 + 3
             garis = "+" + "-" * (total+2) + "+"
 
-            print("\n" + garis)
-            print(f"| {'HASIL PERHITUNGAN':^{total}} |")
-            print(garis)
-            print(f"| {'Bangun Ruang':<{kolom1}} | {nama_bangun:<{kolom2}} |")
-            print(f"| {'Jenis Perhitungan':<{kolom1}} | {jenis:<{kolom2}} |")
-            print(f"| {'Nilai Input':<{kolom1}} | {', '.join(map(str, angka)):<{kolom2}} |")
-            print(f"| {'Hasil':<{kolom1}} | {f'{hasil:.2f} {satuan}':<{kolom2}} |")
-            print(garis)
+            space()
+            center_print(garis)
+            center_print(f"| {'HASIL PERHITUNGAN':^{total}} |")
+            center_print(garis)
+            center_print(f"| {'Bangun Ruang':<{kolom1}} | {nama_bangun:<{kolom2}} |")
+            center_print(f"| {'Jenis Perhitungan':<{kolom1}} | {jenis:<{kolom2}} |")
+            center_print(f"| {'Nilai Input':<{kolom1}} | {', '.join(map(str, angka)):<{kolom2}} |")
+            center_print(f"| {'Hasil':<{kolom1}} | {f'{hasil:.2f} {satuan}':<{kolom2}} |")
+            center_print(garis)
             break
 
 

@@ -2,6 +2,10 @@ import re
 from utills import menu3, error, space, pembuka3, info, line
 from InputValidation import validasi_data_input
 
+# Fungsi bantu untuk menampilkan teks di tengah layar
+def center_print(teks, width=64):
+    print(teks.center(width))
+
 def faktorial(n):
     if n < 0 or not float(n).is_integer():
         return None
@@ -50,16 +54,17 @@ def konversi_faktorial(angka_list):
     return hasil_faktorial
 
 def tampilkan_tabel_faktorial(judul, angka_asli, angka_faktorial, hasil):
+    space()
     line()
     space()
-    print("+-------------------------------------------+")
-    print(f"| Operasi : {judul:<31} |")
-    print("+-------------------------------------------+")
+    center_print("+-------------------------------------------+")
+    center_print(f"| Operasi : {judul:<31} |")
+    center_print("+-------------------------------------------+")
     for i, (asal, fakt) in enumerate(zip(angka_asli, angka_faktorial), start=1):
-        print(f"| Angka {i:<2}: {int(asal):<3}! = {int(fakt):<24} |")
-    print("+-------------------------------------------+")
-    print(f"| Hasil   : {hasil:<31.2f} |")
-    print("+-------------------------------------------+")
+        center_print(f"| Angka {i:<2}: {int(asal):<3}! = {int(fakt):<24} |")
+    center_print("+-------------------------------------------+")
+    center_print(f"| Hasil   : {hasil:<31.2f} |")
+    center_print("+-------------------------------------------+")
     space()
     line()
 
@@ -91,7 +96,6 @@ def eksekusi3():
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
-                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -111,7 +115,6 @@ def eksekusi3():
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
-                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -131,7 +134,6 @@ def eksekusi3():
                 while True:
                     info("Ketik 'back' untuk kembali")
                     data_input = validasi_data_input(input("Masukkan bilangan (pisahkan dengan spasi): "))
-                    space()
                     if not data_input:
                         continue
                     if data_input.lower() == "back":
@@ -150,5 +152,34 @@ def eksekusi3():
                     tampilkan_tabel_faktorial("Pembagian Faktorial", angka, angka_faktorial, hasil)
                     break
 
-            case 5:
+            case 5:  # Faktorial Tunggal
+                while True:
+                    info("Ketik 'back' untuk kembali")
+                    data_input = validasi_data_input(input("Masukkan satu bilangan: "))
+                    space()
+                    if not data_input:
+                        continue
+                    if data_input.lower() == "back":
+                        break
+                    if not re.match(r"^-?\d+$", data_input):
+                        error("Masukkan hanya satu bilangan bulat.")
+                        continue
+                    angka = int(data_input)
+                    hasil = faktorial(angka)
+                    if hasil is None:
+                        error("Faktorial hanya untuk bilangan bulat positif.")
+                        continue
+                    space()
+                    line()
+                    space()
+                    center_print("+-------------------------------------------+")
+                    center_print("| Operasi : Faktorial Tunggal               |")
+                    center_print("+-------------------------------------------+")
+                    center_print(f"| Angka   : {angka:<3}! = {hasil:<24} |")
+                    center_print("+-------------------------------------------+")
+                    space()
+                    line()
+                    break
+
+            case 6:
                 break
