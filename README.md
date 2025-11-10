@@ -71,7 +71,7 @@ Melakukan konversi berbagai satuan umum:
 
 ---
 
-## 👥 Kelompok 3 - KBS Calculator
+## 👥 Kelompok AP-8 - KBS Calculator
 ### Anggota:
 1. Ahmad Fauzi Ali - H071251062
 2. Alisya Nadhifa Raihani - H071251092
