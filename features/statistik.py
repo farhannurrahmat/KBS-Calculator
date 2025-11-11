@@ -44,7 +44,7 @@ def tampilkan_tabel(mean, median, modus, maksimum, minimum):
     line()
 
 
-def fitur_statistik():
+def eksekusi2():
     pembuka2()
     while True:
         pilihan2 = menu2()

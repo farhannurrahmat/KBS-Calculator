@@ -2,6 +2,10 @@ import re
 from utills import line, space, pembuka6, error, info, menu6
 from InputValidation import validasi_data_input
 
+# Fungsi bantu untuk menampilkan teks di tengah layar
+def center_print(teks, width=64):
+    print(teks.center(width))
+
 # ===== OPERASI KONVERSI =====
 
 def konversi_panjang(nilai, dari, ke):
@@ -88,15 +92,15 @@ def konversi_suhu(nilai, dari, ke):
 def tampilkan_tabel_konversi(judul, nilai, dari, ke, hasil):
     line()
     space()
-    print("+-------------------------------------------+")
-    print(f"| Jenis Konversi : {judul:<24} |")
-    print("+-------------------------------------------+")
-    print(f"| Nilai Awal     : {nilai:<24.4f} |")
-    print(f"| Dari Satuan    : {dari:<24} |")
-    print(f"| Ke Satuan      : {ke:<24} |")
-    print("+-------------------------------------------+")
-    print(f"| Hasil Konversi : {hasil:<24.4f} |")
-    print("+-------------------------------------------+")
+    center_print("+-------------------------------------------+")
+    center_print(f"| Jenis Konversi : {judul:<24} |")
+    center_print("+-------------------------------------------+")
+    center_print(f"| Nilai Awal     : {nilai:<24.4f} |")
+    center_print(f"| Dari Satuan    : {dari:<24} |")
+    center_print(f"| Ke Satuan      : {ke:<24} |")
+    center_print("+-------------------------------------------+")
+    center_print(f"| Hasil Konversi : {hasil:<24.4f} |")
+    center_print("+-------------------------------------------+")
     space()
     line()
 
